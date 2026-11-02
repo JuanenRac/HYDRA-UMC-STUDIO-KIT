@@ -1,0 +1,442 @@
+{
+  "repo": "HYDRA-UMC-STUDIO-KIT",
+  "ecosystem": "hydra",
+  "svg": "en",
+  "exempt": [
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
+    "SUPPORT.md",
+    "LICENSE",
+    "LICENSE.md",
+    "build-test.bat",
+    "eslint.config.js",
+    "package-lock.json",
+    "test.bat"
+  ],
+  "cards": [
+    {
+      "name": "src/",
+      "span": 3,
+      "accent": "a",
+      "rows": [
+        {
+          "name": "storage.ts",
+          "desc": {
+            "en": "safe storage helpers, in-memory storage",
+            "es": "ayudas de almacenamiento seguro, almacenamiento en memoria",
+            "de": "sichere Speicherhilfen, Speicher im Arbeitsspeicher",
+            "fr": "aides de stockage sûres, stockage en mémoire",
+            "it": "aiuti di archiviazione sicuri, archivio in memoria",
+            "ja": "安全なストレージ補助、メモリ上のストレージ",
+            "zh": "安全的存储辅助函数、内存存储",
+            "pt": "auxiliares de armazenamento seguro, armazenamento em memória"
+          }
+        },
+        {
+          "name": "store.ts",
+          "desc": {
+            "en": "a small observable value for any framework",
+            "es": "un pequeño valor observable para cualquier framework",
+            "de": "ein kleiner beobachtbarer Wert für jedes Framework",
+            "fr": "une petite valeur observable pour tout framework",
+            "it": "un piccolo valore osservabile per qualsiasi framework",
+            "ja": "どのフレームワークでも使える小さな監視可能な値",
+            "zh": "适用于任何框架的小型可观察值",
+            "pt": "um pequeno valor observável para qualquer framework"
+          }
+        },
+        {
+          "name": "session.ts",
+          "desc": {
+            "en": "sign-in tokens, launch address, Authorization header",
+            "es": "tokens de inicio de sesión, dirección de arranque, cabecera Authorization",
+            "de": "Anmelde-Tokens, Startadresse, Authorization-Header",
+            "fr": "jetons de connexion, adresse de lancement, en-tête Authorization",
+            "it": "token di accesso, indirizzo di avvio, intestazione Authorization",
+            "ja": "サインイントークン、起動アドレス、Authorization ヘッダー",
+            "zh": "登录令牌、启动地址、Authorization 头",
+            "pt": "tokens de início de sessão, endereço de arranque, cabeçalho Authorization"
+          }
+        },
+        {
+          "name": "apiBase.ts",
+          "desc": {
+            "en": "the address of the server in development and in production",
+            "es": "la dirección del servidor en desarrollo y en producción",
+            "de": "die Adresse des Servers in Entwicklung und Produktion",
+            "fr": "l'adresse du serveur en développement et en production",
+            "it": "l'indirizzo del server in sviluppo e in produzione",
+            "ja": "開発時と本番でのサーバーのアドレス",
+            "zh": "开发和生产环境中的服务器地址",
+            "pt": "o endereço do servidor em desenvolvimento e em produção"
+          }
+        },
+        {
+          "name": "http.ts",
+          "desc": {
+            "en": "HTTP client: timeout, bounded retries, typed errors",
+            "es": "cliente HTTP: tiempo límite, reintentos acotados, errores tipados",
+            "de": "HTTP-Client: Zeitlimit, begrenzte Wiederholungen, typisierte Fehler",
+            "fr": "client HTTP : délai, reprises bornées, erreurs typées",
+            "it": "client HTTP: timeout, tentativi limitati, errori tipizzati",
+            "ja": "HTTP クライアント：タイムアウト、回数制限付き再試行、型付きエラー",
+            "zh": "HTTP 客户端：超时、有限重试、类型化错误",
+            "pt": "cliente HTTP: tempo limite, repetições limitadas, erros tipados"
+          }
+        },
+        {
+          "name": "history.ts",
+          "desc": {
+            "en": "connection history parsers and recent choices",
+            "es": "lectores del historial de conexiones y elecciones recientes",
+            "de": "Parser des Verbindungsverlaufs und letzte Auswahl",
+            "fr": "lecteurs de l'historique des connexions et choix récents",
+            "it": "lettori della cronologia delle connessioni e scelte recenti",
+            "ja": "接続履歴のパーサーと最近の選択",
+            "zh": "连接历史解析器和最近的选择",
+            "pt": "leitores do histórico de ligações e escolhas recentes"
+          }
+        },
+        {
+          "name": "prefs.ts",
+          "desc": {
+            "en": "local preferences with a validator per field",
+            "es": "preferencias locales con un validador por campo",
+            "de": "lokale Einstellungen mit einem Validator je Feld",
+            "fr": "préférences locales avec un validateur par champ",
+            "it": "preferenze locali con un validatore per campo",
+            "ja": "フィールドごとの検証付きローカル設定",
+            "zh": "每个字段带验证器的本地偏好设置",
+            "pt": "preferências locais com um validador por campo"
+          }
+        },
+        {
+          "name": "tours.ts",
+          "desc": {
+            "en": "guided tours and which ones were seen",
+            "es": "recorridos guiados y cuáles se han visto",
+            "de": "geführte Rundgänge und welche gesehen wurden",
+            "fr": "visites guidées et lesquelles ont été vues",
+            "it": "tour guidati e quali sono stati visti",
+            "ja": "ガイドツアーと表示済みのツアー",
+            "zh": "导览以及已查看的导览",
+            "pt": "visitas guiadas e quais já foram vistas"
+          }
+        },
+        {
+          "name": "messages.ts",
+          "desc": {
+            "en": "the texts of the kit in the eight languages",
+            "es": "los textos del kit en los ocho idiomas",
+            "de": "die Texte des Kits in den acht Sprachen",
+            "fr": "les textes du kit dans les huit langues",
+            "it": "i testi del kit nelle otto lingue",
+            "ja": "キットの文言（8 言語）",
+            "zh": "工具包的八种语言文本",
+            "pt": "os textos do kit nos oito idiomas"
+          }
+        },
+        {
+          "name": "index.ts",
+          "desc": {
+            "en": "the public API",
+            "es": "la API pública",
+            "de": "die öffentliche API",
+            "fr": "l'API publique",
+            "it": "l'API pubblica",
+            "ja": "公開 API",
+            "zh": "公共 API",
+            "pt": "a API pública"
+          }
+        }
+      ]
+    },
+    {
+      "name": {
+        "en": "folders",
+        "es": "carpetas",
+        "de": "Ordner",
+        "fr": "dossiers",
+        "it": "cartelle",
+        "ja": "フォルダ",
+        "zh": "文件夹",
+        "pt": "pastas"
+      },
+      "kind": "group",
+      "span": 3,
+      "accent": "b",
+      "columns": 2,
+      "rows": [
+        {
+          "name": "tests/",
+          "desc": {
+            "en": "tests with fakes for fetch and for the storage",
+            "es": "pruebas con simulaciones de fetch y del almacenamiento",
+            "de": "Tests mit Attrappen für fetch und den Speicher",
+            "fr": "tests avec des simulations de fetch et du stockage",
+            "it": "test con simulazioni di fetch e dell'archivio",
+            "ja": "fetch とストレージの代役を使ったテスト",
+            "zh": "使用 fetch 和存储模拟的测试",
+            "pt": "testes com simulações de fetch e do armazenamento"
+          },
+          "tree_desc": {
+            "en": "tests with fakes for fetch and for the storage: session, HTTP, address, history, preferences, tours and texts",
+            "es": "pruebas con simulaciones de fetch y del almacenamiento: sesión, HTTP, dirección, historial, preferencias, recorridos y textos",
+            "de": "Tests mit Attrappen für fetch und den Speicher: Sitzung, HTTP, Adresse, Verlauf, Einstellungen, Rundgänge und Texte",
+            "fr": "tests avec des simulations de fetch et du stockage : session, HTTP, adresse, historique, préférences, visites et textes",
+            "it": "test con simulazioni di fetch e dell'archivio: sessione, HTTP, indirizzo, cronologia, preferenze, tour e testi",
+            "ja": "fetch とストレージの代役を使ったテスト：セッション、HTTP、アドレス、履歴、設定、ツアー、文言",
+            "zh": "使用 fetch 和存储模拟的测试：会话、HTTP、地址、历史、偏好设置、导览和文本",
+            "pt": "testes com simulações de fetch e do armazenamento: sessão, HTTP, endereço, histórico, preferências, visitas e textos"
+          }
+        },
+        {
+          "name": "docs/",
+          "desc": {
+            "en": "API reference and migration guide",
+            "es": "referencia de la API y guía de migración",
+            "de": "API-Referenz und Migrationsanleitung",
+            "fr": "référence de l'API et guide de migration",
+            "it": "riferimento dell'API e guida alla migrazione",
+            "ja": "API リファレンスと移行ガイド",
+            "zh": "API 参考和迁移指南",
+            "pt": "referência da API e guia de migração"
+          },
+          "tree_desc": {
+            "en": "API reference and the migration guide for the web clients",
+            "es": "referencia de la API y guía de migración para los clientes web",
+            "de": "API-Referenz und Migrationsanleitung für die Web-Clients",
+            "fr": "référence de l'API et guide de migration pour les clients web",
+            "it": "riferimento dell'API e guida alla migrazione per i client web",
+            "ja": "API リファレンスと Web クライアント向けの移行ガイド",
+            "zh": "API 参考以及面向 Web 客户端的迁移指南",
+            "pt": "referência da API e guia de migração para os clientes web"
+          }
+        },
+        {
+          "name": "tools/",
+          "desc": {
+            "en": "project tools and CI checks",
+            "es": "herramientas del proyecto y comprobaciones de CI",
+            "de": "Projektwerkzeuge und CI-Prüfungen",
+            "fr": "outils du projet et vérifications de CI",
+            "it": "strumenti del progetto e controlli CI",
+            "ja": "プロジェクトのツールと CI チェック",
+            "zh": "项目工具和 CI 检查",
+            "pt": "ferramentas do projeto e verificações de CI"
+          },
+          "tree_desc": {
+            "en": "project tools and CI checks",
+            "es": "herramientas del proyecto y comprobaciones de CI",
+            "de": "Projektwerkzeuge und CI-Prüfungen",
+            "fr": "outils du projet et vérifications de CI",
+            "it": "strumenti del progetto e controlli CI",
+            "ja": "プロジェクトのツールと CI チェック",
+            "zh": "项目工具和 CI 检查",
+            "pt": "ferramentas do projeto e verificações de CI"
+          }
+        },
+        {
+          "name": "images/",
+          "desc": {
+            "en": "banner and diagrams",
+            "es": "banner y diagramas",
+            "de": "Banner und Diagramme",
+            "fr": "bannière et schémas",
+            "it": "banner e diagrammi",
+            "ja": "バナーと図",
+            "zh": "横幅图和示意图",
+            "pt": "faixa e diagramas"
+          },
+          "tree_desc": {
+            "en": "banner and diagrams",
+            "es": "banner y diagramas",
+            "de": "Banner und Diagramme",
+            "fr": "bannière et schémas",
+            "it": "banner e diagrammi",
+            "ja": "バナーと図",
+            "zh": "横幅图和示意图",
+            "pt": "faixa e diagramas"
+          }
+        },
+        {
+          "name": ".github/",
+          "desc": {
+            "en": "CI workflow and issue templates",
+            "es": "flujo de CI y plantillas de incidencias",
+            "de": "CI-Workflow und Issue-Vorlagen",
+            "fr": "workflow de CI et modèles de tickets",
+            "it": "flusso CI e modelli di segnalazione",
+            "ja": "CI ワークフローと Issue テンプレート",
+            "zh": "CI 工作流和问题模板",
+            "pt": "fluxo de CI e modelos de pedidos"
+          }
+        }
+      ]
+    },
+    {
+      "name": {
+        "en": "project files",
+        "es": "ficheros del proyecto",
+        "de": "Projektdateien",
+        "fr": "fichiers du projet",
+        "it": "file del progetto",
+        "ja": "プロジェクトのファイル",
+        "zh": "项目文件",
+        "pt": "ficheiros do projeto"
+      },
+      "kind": "group",
+      "span": 3,
+      "accent": "c",
+      "columns": 2,
+      "rows": [
+        {
+          "name": "package.json",
+          "desc": {
+            "en": "package metadata and scripts",
+            "es": "metadatos del paquete y scripts",
+            "de": "Paketdaten und Skripte",
+            "fr": "métadonnées du paquet et scripts",
+            "it": "metadati del pacchetto e script",
+            "ja": "パッケージのメタデータとスクリプト",
+            "zh": "包元数据和脚本",
+            "pt": "metadados do pacote e scripts"
+          },
+          "tree_desc": {
+            "en": "package metadata and scripts",
+            "es": "metadatos del paquete y scripts",
+            "de": "Paketdaten und Skripte",
+            "fr": "métadonnées du paquet et scripts",
+            "it": "metadati del pacchetto e script",
+            "ja": "パッケージのメタデータとスクリプト",
+            "zh": "包元数据和脚本",
+            "pt": "metadados do pacote e scripts"
+          }
+        },
+        {
+          "name": "tsconfig.json ...",
+          "desc": {
+            "en": "TypeScript configuration (checks and build)",
+            "es": "configuración de TypeScript (comprobación y compilación)",
+            "de": "TypeScript-Konfiguration (Prüfung und Build)",
+            "fr": "configuration TypeScript (vérification et compilation)",
+            "it": "configurazione di TypeScript (controllo e compilazione)",
+            "ja": "TypeScript の設定（検査とビルド）",
+            "zh": "TypeScript 配置（检查和构建）",
+            "pt": "configuração do TypeScript (verificação e compilação)"
+          },
+          "tree_desc": {
+            "en": "TypeScript configuration (checks and build)",
+            "es": "configuración de TypeScript (comprobación y compilación)",
+            "de": "TypeScript-Konfiguration (Prüfung und Build)",
+            "fr": "configuration TypeScript (vérification et compilation)",
+            "it": "configurazione di TypeScript (controllo e compilazione)",
+            "ja": "TypeScript の設定（検査とビルド）",
+            "zh": "TypeScript 配置（检查和构建）",
+            "pt": "configuração do TypeScript (verificação e compilação)"
+          },
+          "tree_name": "tsconfig.json / tsconfig.build.json"
+        },
+        {
+          "name": "bump_manifest_version.py",
+          "desc": {
+            "en": "syncs the version of hydra-umc.project.json",
+            "es": "sincroniza la versión de hydra-umc.project.json",
+            "de": "gleicht die Version von hydra-umc.project.json ab",
+            "fr": "synchronise la version de hydra-umc.project.json",
+            "it": "sincronizza la versione di hydra-umc.project.json",
+            "ja": "hydra-umc.project.json のバージョンを同期",
+            "zh": "同步 hydra-umc.project.json 的版本",
+            "pt": "sincroniza a versão de hydra-umc.project.json"
+          },
+          "tree_desc": {
+            "en": "syncs the version of hydra-umc.project.json",
+            "es": "sincroniza la versión de hydra-umc.project.json",
+            "de": "gleicht die Version von hydra-umc.project.json ab",
+            "fr": "synchronise la version de hydra-umc.project.json",
+            "it": "sincronizza la versione di hydra-umc.project.json",
+            "ja": "hydra-umc.project.json のバージョンを同期",
+            "zh": "同步 hydra-umc.project.json 的版本",
+            "pt": "sincroniza a versão de hydra-umc.project.json"
+          }
+        },
+        {
+          "name": "build.sh / build.bat",
+          "desc": {
+            "en": "install, test and build dist/",
+            "es": "instala, prueba y compila dist/",
+            "de": "installiert, testet und baut dist/",
+            "fr": "installe, teste et compile dist/",
+            "it": "installa, testa e compila dist/",
+            "ja": "インストール、テスト、dist/ のビルド",
+            "zh": "安装、测试并构建 dist/",
+            "pt": "instala, testa e compila dist/"
+          },
+          "tree_desc": {
+            "en": "install, test and build dist/",
+            "es": "instala, prueba y compila dist/",
+            "de": "installiert, testet und baut dist/",
+            "fr": "installe, teste et compile dist/",
+            "it": "installa, testa e compila dist/",
+            "ja": "インストール、テスト、dist/ のビルド",
+            "zh": "安装、测试并构建 dist/",
+            "pt": "instala, testa e compila dist/"
+          }
+        },
+        {
+          "name": "CHANGELOG.md",
+          "desc": {
+            "en": "what changed in each version",
+            "es": "qué cambió en cada versión",
+            "de": "was sich in jeder Version geändert hat",
+            "fr": "ce qui a changé à chaque version",
+            "it": "cosa è cambiato in ogni versione",
+            "ja": "各バージョンの変更点",
+            "zh": "每个版本的变更",
+            "pt": "o que mudou em cada versão"
+          }
+        },
+        {
+          "name": "build-test.sh",
+          "desc": {
+            "en": "non-mutating build check",
+            "es": "comprobación de compilación sin cambios",
+            "de": "Build-Prüfung ohne Änderungen",
+            "fr": "vérification de compilation sans modification",
+            "it": "verifica della compilazione senza modifiche",
+            "ja": "変更を伴わないビルド検査",
+            "zh": "不修改内容的构建检查",
+            "pt": "verificação de compilação sem alterações"
+          }
+        },
+        {
+          "name": "hydra-umc.project.json",
+          "desc": {
+            "en": "manifest: version, maturity, family",
+            "es": "manifiesto: versión, madurez, familia",
+            "de": "Manifest: Version, Reifegrad, Familie",
+            "fr": "manifeste : version, maturité, famille",
+            "it": "manifesto: versione, maturità, famiglia",
+            "ja": "マニフェスト：バージョン、成熟度、ファミリー",
+            "zh": "清单：版本、成熟度、系列",
+            "pt": "manifesto: versão, maturidade, família"
+          }
+        },
+        {
+          "name": "test.sh",
+          "desc": {
+            "en": "runs the tests",
+            "es": "ejecuta las pruebas",
+            "de": "führt die Tests aus",
+            "fr": "lance les tests",
+            "it": "esegue i test",
+            "ja": "テストを実行",
+            "zh": "运行测试",
+            "pt": "executa os testes"
+          }
+        }
+      ]
+    }
+  ]
+}

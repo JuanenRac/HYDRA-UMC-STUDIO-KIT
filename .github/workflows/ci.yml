@@ -1,0 +1,26 @@
+# =============================================================================
+# HYDRA-UMC - CI baseline workflow
+# Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
+# GPL-3.0-or-later - see LICENSE
+# =============================================================================
+name: HYDRA-UMC CI baseline
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  baseline:
+    name: Validate project baseline
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+      - name: Run the baseline steps of the family
+        uses: ./.github/actions/hydra-baseline
+        with:
+          node-version: "22"

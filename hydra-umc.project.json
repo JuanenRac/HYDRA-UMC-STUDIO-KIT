@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "ecosystem": "HYDRA-UMC",
+  "name": "HYDRA-UMC-STUDIO-KIT",
+  "version": "0.0.1",
+  "role": "library",
+  "stack": "node",
+  "technologies": [
+    "TypeScript",
+    "Vitest"
+  ],
+  "deployment_target": "user-pc",
+  "maturity": "scaffolding",
+  "evidence": "none",
+  "hardware_bound": false,
+  "family": "Complementary Tools",
+  "parent": "HYDRA-UMC-STUDIO",
+  "build": "python tools/build_test.py",
+  "notes": "Small TypeScript package with no runtime dependencies and no framework: the sign-in session storage, the connection history, guided tours, local preferences and an HTTP client with timeouts, bounded retries and typed errors that the web clients of the family can share. Tested with fakes for fetch and for the storage; nothing in it has run inside a real browser or against the real server yet. HYDRA-UMC-STUDIO does not consume it yet.",
+  "native_version": {
+    "file": "package.json",
+    "pattern": "\"version\":\\s*\"(\\d+)\\.(\\d+)\\.(\\d+)\""
+  }
+}

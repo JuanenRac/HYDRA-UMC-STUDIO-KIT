@@ -1,0 +1,167 @@
+{
+  "repo": "HYDRA-UMC-STUDIO-KIT",
+  "ecosystem": "hydra",
+  "tagline": "The code the web clients repeat, written once: session, HTTP, history, preferences and tours.",
+  "description": "HYDRA-UMC-STUDIO-KIT is a package with no framework and no runtime dependencies. A web client creates a session, an HTTP client that uses it, and the stores for its history, preferences and tours; the kit talks to the storage of the browser and to the server, and nothing else.",
+  "columns": [
+    "WHO USES IT",
+    "THIS REPOSITORY",
+    "WHAT IT TALKS TO"
+  ],
+  "nodes": [
+    {
+      "id": "studio",
+      "column": 0,
+      "level": "untested",
+      "title": "HYDRA-UMC-STUDIO",
+      "lines": [
+        "will import the kit;",
+        "not migrated yet"
+      ]
+    },
+    {
+      "id": "later",
+      "column": 0,
+      "level": "untested",
+      "title": "Other web clients",
+      "lines": [
+        "ARMOR-STUDIO and",
+        "URTC-WEB-STUDIO later"
+      ]
+    },
+    {
+      "id": "ses",
+      "column": 1,
+      "level": "tested",
+      "title": "session",
+      "lines": [
+        "tokens, launch address,",
+        "Authorization header"
+      ],
+      "code": [
+        "src/session.ts"
+      ]
+    },
+    {
+      "id": "http",
+      "column": 1,
+      "level": "tested",
+      "title": "HTTP client",
+      "lines": [
+        "timeout, bounded retries,",
+        "typed errors"
+      ],
+      "code": [
+        "src/http.ts",
+        "src/apiBase.ts"
+      ]
+    },
+    {
+      "id": "his",
+      "column": 1,
+      "level": "tested",
+      "title": "connection history",
+      "lines": [
+        "clients and sign-ins,",
+        "recent choices"
+      ],
+      "code": [
+        "src/history.ts"
+      ]
+    },
+    {
+      "id": "pre",
+      "column": 1,
+      "level": "tested",
+      "title": "preferences + tours",
+      "lines": [
+        "validated per field,",
+        "tours seen once"
+      ],
+      "code": [
+        "src/prefs.ts",
+        "src/tours.ts",
+        "src/store.ts"
+      ]
+    },
+    {
+      "id": "msg",
+      "column": 1,
+      "level": "tested",
+      "title": "texts",
+      "lines": [
+        "errors, tour buttons,",
+        "events: 8 languages"
+      ],
+      "code": [
+        "src/messages.ts"
+      ]
+    },
+    {
+      "id": "sto",
+      "column": 2,
+      "level": "tested",
+      "title": "browser storage",
+      "lines": [
+        "session and local;",
+        "tested with a fake"
+      ],
+      "code": [
+        "src/storage.ts"
+      ]
+    },
+    {
+      "id": "srv",
+      "column": 2,
+      "level": "untested",
+      "title": "HYDRA-UMC-SERVER",
+      "lines": [
+        "REST routes; never called",
+        "by this package yet"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "studio",
+      "to": "ses",
+      "level": "untested"
+    },
+    {
+      "from": "later",
+      "to": "ses",
+      "level": "untested"
+    },
+    {
+      "from": "studio",
+      "to": "http",
+      "level": "untested"
+    },
+    {
+      "from": "later",
+      "to": "pre",
+      "level": "untested"
+    },
+    {
+      "from": "ses",
+      "to": "sto",
+      "level": "tested"
+    },
+    {
+      "from": "pre",
+      "to": "sto",
+      "level": "tested"
+    },
+    {
+      "from": "http",
+      "to": "srv",
+      "level": "untested"
+    },
+    {
+      "from": "his",
+      "to": "srv",
+      "level": "untested"
+    }
+  ],
+  "footer": "Tested with fakes for fetch and for the storage; it has not run in a real browser or against the real server."
+}
