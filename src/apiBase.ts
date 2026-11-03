@@ -27,11 +27,18 @@ export interface ApiBaseOptions {
   location?: PageLocation | null;
 }
 
+/** The address without the slashes at its end, found by walking back from the end (no regular expression, so a long run of slashes costs one pass). */
+function withoutTrailingSlashes(address: string): string {
+  let end = address.length;
+  while (end > 0 && address.charCodeAt(end - 1) === 47) end -= 1;
+  return address.slice(0, end);
+}
+
 /** '' in development; the configured address without trailing slashes; otherwise the origin of the page. */
 export function resolveApiBase(options: ApiBaseOptions = {}): string {
   if (options.dev) return '';
   const configured = options.configured?.trim();
-  if (configured) return configured.replace(/\/+$/, '');
+  if (configured) return withoutTrailingSlashes(configured);
   const location = options.location;
   const protocol = location?.protocol === 'https:' ? 'https:' : 'http:';
   const hostname = location?.hostname || 'localhost';

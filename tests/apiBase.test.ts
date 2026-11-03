@@ -10,6 +10,12 @@ describe('resolveApiBase', () => {
     expect(resolveApiBase({ configured: ' https://api.example:8443/// ' })).toBe('https://api.example:8443');
   });
 
+  it('drops a very long run of trailing slashes in one pass', () => {
+    const started = Date.now();
+    expect(resolveApiBase({ configured: 'http://h:1' + '/'.repeat(200000) + 'x' + '/'.repeat(200000) })).toBe('http://h:1' + '/'.repeat(200000) + 'x');
+    expect(Date.now() - started).toBeLessThan(2000);
+  });
+
   it('falls back to the origin of the page, with its own port', () => {
     expect(resolveApiBase({ location: { protocol: 'http:', hostname: '192.168.0.180', port: '3000' } })).toBe('http://192.168.0.180:3000');
   });

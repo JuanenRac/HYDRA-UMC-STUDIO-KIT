@@ -4,6 +4,8 @@ All notable changes to this project are documented here.
 
 ## [Unreleased]
 
+- **The configured API address loses its trailing slashes in one pass:** a very long run of slashes could take quadratic time with the regular expression used before; a test with a hostile address covers it.
+
 ## [0.0.2] - The package builds itself when a client installs it from a release tag, so the compiled dist is available without a separate build step
 
 - **The package builds itself when a client installs it from a release tag** (`prepare` runs the TypeScript build), so `npm install github:JuanenRac/HYDRA-UMC-STUDIO-KIT#<tag>` gives the compiled `dist/`.
