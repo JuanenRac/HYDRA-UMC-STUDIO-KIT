@@ -18,14 +18,14 @@ GPL-3.0-or-later - see LICENSE
   <img src="https://img.shields.io/badge/License-GPL%203.0--or--later-blue.svg" alt="GPL 3.0 or later">
   <img src="https://img.shields.io/badge/Stack-TypeScript-3178C6.svg" alt="Stack">
   <img src="https://img.shields.io/badge/Feature-No%20Runtime%20Dependencies-blueviolet.svg" alt="Feature">
-  <img src="https://img.shields.io/badge/Tests-86%20passing-2ea44f.svg" alt="Tests">
+  <img src="https://img.shields.io/badge/Tests-87%20passing-2ea44f.svg" alt="Tests">
   <img src="https://img.shields.io/badge/Version-0.0.2-0f6cbd.svg" alt="Version">
   <img src="https://img.shields.io/badge/Maturity-scaffolding-FFB020.svg" alt="Maturity">
 </p>
 
 ---
 
-**Honesty check - what actually runs today:** the session, the HTTP client, the address resolution, the connection-history parsers, the local preferences, the recent list, the tours and the texts are real and tested (86 tests passing), always against fakes of `fetch` and of the storage: nothing has run inside a real browser or against a real HYDRA-UMC-SERVER yet. HYDRA-UMC-STUDIO does not consume the kit yet, so no screen of any client uses it today. The guided tours are new code: no client has a tour to replace. See `CHANGELOG.md` for exactly what has shipped so far.
+**Honesty check - what actually runs today:** the session, the HTTP client, the address resolution, the connection-history parsers, the local preferences, the recent list, the tours and the texts are real and tested (87 tests passing), always against fakes of `fetch` and of the storage: nothing has run inside a real browser or against a real HYDRA-UMC-SERVER yet. HYDRA-UMC-STUDIO does not consume the kit yet, so no screen of any client uses it today. The guided tours are new code: no client has a tour to replace. See `CHANGELOG.md` for exactly what has shipped so far.
 
 ---
 
@@ -39,7 +39,7 @@ GPL-3.0-or-later - see LICENSE
 |---|---|
 | Version | `0.0.2` |
 | Maturity | Scaffolding |
-| Tests | 86 (`npm test`) |
+| Tests | 87 (`npm test`) |
 | Stack | TypeScript / Vitest |
 | Target | A web browser on the user's PC |
 | On real hardware | Not applicable: nothing here runs on hardware |
@@ -55,7 +55,7 @@ Each line is one part of this repository and the light says how far it is today.
 | Area | State | What it means here |
 |---|---|---|
 | Software | 🟠 | Structure and first pieces only; most of the work is still to do |
-| Tests | 🟡 | 86 automated tests, run on every change |
+| Tests | 🟡 | 87 automated tests, run on every change |
 | Real hardware | 🟡 | Not applicable: nothing here runs on hardware |
 | Interface and protocols | 🟡 | The routes or messages it offers are documented and tested with a client; not every client has used them yet |
 | Integration | 🟠 | It works on its own; its link with the rest of the ecosystem has not been exercised yet |
@@ -112,7 +112,7 @@ Use it from a web client with `import { createSession, createHttpClient } from '
 
 ## 🧪 Testing
 
-86 automated tests run with `npm test`. They use fakes for `fetch` and for the storage and need no browser and no network.
+87 automated tests run with `npm test`. They use fakes for `fetch` and for the storage and need no browser and no network.
 
 The CI runs `HYDRA_UMC_CI=1 python tools/ci_validate.py`, which checks the manifest, the documents, the eight READMEs and the pictures.
 

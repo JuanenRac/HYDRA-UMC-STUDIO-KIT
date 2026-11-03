@@ -18,14 +18,14 @@ GPL-3.0-or-later - see LICENSE
   <img src="https://img.shields.io/badge/License-GPL%203.0--or--later-blue.svg" alt="GPL 3.0 or later">
   <img src="https://img.shields.io/badge/Stack-TypeScript-3178C6.svg" alt="Stack">
   <img src="https://img.shields.io/badge/Feature-No%20Runtime%20Dependencies-blueviolet.svg" alt="Feature">
-  <img src="https://img.shields.io/badge/Tests-86%20passing-2ea44f.svg" alt="Tests">
+  <img src="https://img.shields.io/badge/Tests-87%20passing-2ea44f.svg" alt="Tests">
   <img src="https://img.shields.io/badge/Version-0.0.2-0f6cbd.svg" alt="Version">
   <img src="https://img.shields.io/badge/Maturity-scaffolding-FFB020.svg" alt="Maturity">
 </p>
 
 ---
 
-**诚实性检查 - 今天真正能运行的内容：** 会话、HTTP 客户端、地址解析、连接历史解析器、本地偏好设置、最近选择列表、导览和文本都是真实且经过测试的（86 个测试通过），但测试始终使用 `fetch` 和存储的模拟替身：尚未在真实浏览器中或针对真实的 HYDRA-UMC-SERVER 运行过。HYDRA-UMC-STUDIO 目前尚未使用该工具包，因此今天没有任何客户端的界面在用它。导览是全新的代码：没有任何客户端有可替换的导览。已发布的具体内容见 `CHANGELOG.md`。
+**诚实性检查 - 今天真正能运行的内容：** 会话、HTTP 客户端、地址解析、连接历史解析器、本地偏好设置、最近选择列表、导览和文本都是真实且经过测试的（87 个测试通过），但测试始终使用 `fetch` 和存储的模拟替身：尚未在真实浏览器中或针对真实的 HYDRA-UMC-SERVER 运行过。HYDRA-UMC-STUDIO 目前尚未使用该工具包，因此今天没有任何客户端的界面在用它。导览是全新的代码：没有任何客户端有可替换的导览。已发布的具体内容见 `CHANGELOG.md`。
 
 ---
 
@@ -39,7 +39,7 @@ GPL-3.0-or-later - see LICENSE
 |---|---|
 | 版本 | `0.0.2` |
 | 成熟度 | 雏形 |
-| 测试 | 86 (`npm test`) |
+| 测试 | 87 (`npm test`) |
 | 技术栈 | TypeScript / Vitest |
 | 目标 | 使用者电脑上的网页浏览器 |
 | 真实硬件 | 不适用：这里的内容不在硬件上运行 |
@@ -55,7 +55,7 @@ GPL-3.0-or-later - see LICENSE
 | 领域 | 状态 | 在这里的含义 |
 |---|---|---|
 | 软件 | 🟠 | 目前只有结构和最初的部分，大部分工作尚未完成 |
-| 测试 | 🟡 | 86 项自动测试，每次变更都会运行 |
+| 测试 | 🟡 | 87 项自动测试，每次变更都会运行 |
 | 真实硬件 | 🟡 | 不适用：这里的内容不在硬件上运行 |
 | 接口与协议 | 🟡 | 提供的路由或消息已有文档，并用客户端测试过；尚未被所有客户端使用 |
 | 集成 | 🟠 | 它可以独立工作；与生态系统其余部分的连接尚未验证 |
@@ -112,7 +112,7 @@ npm run typecheck && npm run lint && npm test
 
 ## 🧪 测试
 
-运行 `npm test` 会执行 86 个自动测试。 它们使用 `fetch` 和存储的模拟替身，不需要浏览器，也不需要网络。
+运行 `npm test` 会执行 87 个自动测试。 它们使用 `fetch` 和存储的模拟替身，不需要浏览器，也不需要网络。
 
 CI 运行 `HYDRA_UMC_CI=1 python tools/ci_validate.py`，检查清单、文档、八个 README 和图片。
 
