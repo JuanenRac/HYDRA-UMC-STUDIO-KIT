@@ -4,6 +4,8 @@ All notable changes to this project are documented here.
 
 ## [Unreleased]
 
+## [0.0.2] - The package builds itself when a client installs it from a release tag, so the compiled dist is available without a separate build step
+
 - **The package builds itself when a client installs it from a release tag** (`prepare` runs the TypeScript build), so `npm install github:JuanenRac/HYDRA-UMC-STUDIO-KIT#<tag>` gives the compiled `dist/`.
 
 ## [0.0.1] - First version of the shared kit for the web clients, with no runtime dependencies and no framework

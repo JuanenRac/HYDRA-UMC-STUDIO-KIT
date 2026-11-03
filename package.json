@@ -1,7 +1,7 @@
 {
   "name": "hydra-umc-studio-kit",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "The code the HYDRA-UMC web clients share: sign-in session, connection history, guided tours, local preferences and an HTTP client.",
   "license": "GPL-3.0-or-later",
   "type": "module",
