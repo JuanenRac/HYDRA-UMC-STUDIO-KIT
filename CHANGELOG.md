@@ -4,6 +4,9 @@ All notable changes to this project are documented here.
 
 ## [Unreleased]
 
+- Added the manual workflow `dist-build.yml` that builds the installable package (`package.json`, `LICENSE` and the compiled `dist/`) as `hydra-umc-studio-kit-<version>.tgz` twice, compares the bytes, and uploads it with `SHA256SUMS`, a build manifest and a build attestation, so a client can install it from a release by https URL and hash instead of a git address.
+- Added the build watchdog workflow that opens an issue when a manual build stays stuck.
+
 ## [0.0.3] - The build test of the repository compiles only on CI or when allowed: for the stacks that compile (rust, go, android, flutter, firmware-c), tools/buildtest.py prints BUILDTEST=SKIPPED with exit status 2 on a plain PC, never a... (and 1 more changes)
 
 - **The build test of the repository compiles only on CI or when allowed:** for the stacks that compile (`rust`, `go`, `android`, `flutter`, `firmware-c`), `tools/build_test.py` prints `BUILD_TEST=SKIPPED` with exit status 2 on a plain PC, never a pass; `ALLOW_LOCAL_BUILD=1` allows it and a CI runner always may. The `python` and `node` stacks are not locked.

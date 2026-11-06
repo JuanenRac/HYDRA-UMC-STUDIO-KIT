@@ -10,7 +10,7 @@ HYDRA-UMC-STUDIO is the first client meant to consume this kit, and it does not 
 
 ## Before you start
 
-1. The kit repository has a release tag, and the client pins it (a tag, never a branch or a commit): `npm install github:JuanenRac/HYDRA-UMC-STUDIO-KIT#<tag>`. The package builds itself on install (`prepare`).
+1. The kit release has the built package as an asset, `hydra-umc-studio-kit-<version>.tgz` (made by the `dist-build.yml` workflow of the kit, with a build attestation, and signed by the maintainer). The client pins that archive by its https URL and its integrity hash, never a git address: `npm install https://github.com/JuanenRac/HYDRA-UMC-STUDIO-KIT/releases/download/v<version>/hydra-umc-studio-kit-<version>.tgz`, then check that `package-lock.json` holds the `integrity` of the archive (it must equal the `sha256` of the release). The archive already holds `dist/`, so `npm ci --ignore-scripts` is enough and no SSH key or `prepare` step is needed.
 2. The client's own `npm run typecheck`, `npm run lint` and `npm test` pass before the change.
 
 ## What is replaced in HYDRA-UMC-STUDIO
