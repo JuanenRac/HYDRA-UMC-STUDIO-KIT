@@ -81,6 +81,8 @@ The kit draws nothing: a React client binds any of its stores with `useSyncExter
 
 **HYDRA-UMC-STUDIO-KIT** is the code that the web clients of the family would otherwise copy from one another: the sign-in session, the HTTP client, the connection history, the local preferences and the guided tours, as a TypeScript package with no framework and no runtime dependencies. HYDRA-UMC-STUDIO is the first client meant to use it and does not consume it yet.
 
+> **Platform:** where this README says CM5, it means the pilot bench that runs today; the target platform of HYDRA-UMC is an NVIDIA Jetson Orin NX 16 GB, a design that has not been built or tested.
+
 ## 🏛️ Architecture
 
 <p align="center">

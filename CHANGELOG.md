@@ -4,7 +4,8 @@ All notable changes to this project are documented here.
 
 ## [Unreleased]
 
-## [0.0.4] - Added the manual workflow dist-build.yml that builds the installable package (package.json, LICENSE and the compiled dist/) as hydra-umc-studio-kit-<version>.tgz twice, compares the bytes, and uploads it with SHA256SUMS, a... (and 1 more changes)
+## [0.0.4] - **README: the platform statement:** a note says that where the README speaks of the CM5 it means the pilot bench that runs today, and that the target platform of HYDRA-UMC, an NVIDIA Jetson Orin NX 16 GB, is a design that has not been built or tested.
+- Added the manual workflow dist-build.yml that builds the installable package (package.json, LICENSE and the compiled dist/) as hydra-umc-studio-kit-<version>.tgz twice, compares the bytes, and uploads it with SHA256SUMS, a... (and 1 more changes)
 
 - Added the manual workflow `dist-build.yml` that builds the installable package (`package.json`, `LICENSE` and the compiled `dist/`) as `hydra-umc-studio-kit-<version>.tgz` twice, compares the bytes, and uploads it with `SHA256SUMS`, a build manifest and a build attestation, so a client can install it from a release by https URL and hash instead of a git address.
 - Added the build watchdog workflow that opens an issue when a manual build stays stuck.

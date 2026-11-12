@@ -81,6 +81,8 @@ GPL-3.0-or-later - see LICENSE
 
 **HYDRA-UMC-STUDIO-KIT** 收纳了本系列 Web 客户端否则会互相复制的代码：登录会话、HTTP 客户端、连接历史、本地偏好设置和导览，作为一个不依赖框架、没有运行时依赖的 TypeScript 包。HYDRA-UMC-STUDIO 是第一个打算使用它的客户端，目前尚未使用。
 
+> **平台：** 本 README 中的 CM5 指的是目前正在运行的试验台；HYDRA-UMC 的目标平台是 NVIDIA Jetson Orin NX 16 GB，这是尚未制造或测试的设计。
+
 ## 🏛️ 架构
 
 <p align="center">

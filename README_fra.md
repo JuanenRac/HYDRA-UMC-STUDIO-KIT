@@ -81,6 +81,8 @@ Le kit ne dessine rien : un client React lie chacun de ses stores avec `useSyncE
 
 **HYDRA-UMC-STUDIO-KIT** est le code que les clients web de la famille se copieraient sinon les uns aux autres : la session de connexion, le client HTTP, l'historique des connexions, les préférences locales et les visites guidées, sous forme de paquet TypeScript sans framework et sans dépendance d'exécution. HYDRA-UMC-STUDIO est le premier client prévu pour l'utiliser et ne le consomme pas encore.
 
+> **Plateforme :** là où ce README dit CM5, il s'agit du banc pilote qui fonctionne aujourd'hui ; la plateforme visée par HYDRA-UMC est un NVIDIA Jetson Orin NX 16 Go, une conception ni construite ni testée.
+
 ## 🏛️ Architecture
 
 <p align="center">

@@ -81,6 +81,8 @@ El kit no dibuja nada: un cliente React enlaza cualquiera de sus almacenes con `
 
 **HYDRA-UMC-STUDIO-KIT** es el código que los clientes web de la familia, si no, se copiarían unos a otros: la sesión, el cliente HTTP, el historial de conexiones, las preferencias locales y los recorridos guiados, como un paquete de TypeScript sin framework y sin dependencias de ejecución. HYDRA-UMC-STUDIO es el primer cliente pensado para usarlo y todavía no lo consume.
 
+> **Plataforma:** donde este README dice CM5, se refiere al banco piloto que funciona hoy; la plataforma objetivo de HYDRA-UMC es una NVIDIA Jetson Orin NX de 16 GB, un diseño que no se ha construido ni probado.
+
 ## 🏛️ Arquitectura
 
 <p align="center">

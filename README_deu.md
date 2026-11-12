@@ -81,6 +81,8 @@ Das Kit zeichnet nichts: Ein React-Client bindet jeden seiner Speicher mit `useS
 
 **HYDRA-UMC-STUDIO-KIT** ist der Code, den die Webclients der Familie sonst voneinander kopieren würden: die Anmeldesitzung, der HTTP-Client, der Verbindungsverlauf, die lokalen Einstellungen und die geführten Rundgänge, als TypeScript-Paket ohne Framework und ohne Laufzeitabhängigkeiten. HYDRA-UMC-STUDIO ist der erste Client, der es nutzen soll, und nutzt es noch nicht.
 
+> **Plattform:** Wo dieses README CM5 sagt, ist der Pilotprüfstand gemeint, der heute läuft; die Zielplattform von HYDRA-UMC ist ein NVIDIA Jetson Orin NX 16 GB, ein Entwurf, der weder gebaut noch getestet wurde.
+
 ## 🏛️ Architektur
 
 <p align="center">
