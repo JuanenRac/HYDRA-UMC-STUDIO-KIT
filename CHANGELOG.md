@@ -4,6 +4,8 @@ All notable changes to this project are documented here.
 
 ## [Unreleased]
 
+- **More tests of the kit and a simulation bench with a coverage report:** `tests/messages.test.ts` checks the eight languages of the catalog (a text for every key, the same placeholders in every language, European Portuguese, language picking and filling), `tests/storage.test.ts` the storage helpers (a storage that refuses, JSON that cannot be written, a seeded round trip, the browser storage that is missing or throws) and the observable store (no notification for the same value, listeners that stop or start during a change), and `tests/simulated-server.test.ts` runs the real client, session and connection history against a simulated HYDRA-UMC server: sign-in, a token that expires and is refreshed once, bursts of 503, a rate limit, a cut answer, a server that never answers, a dropped connection, a cancelled call and a seeded storm of faults. The new workflow "Simulation bench" runs the scenarios and prints the coverage of the kit.
+
 ## [0.0.4] - **README: the platform statement:** a note says that where the README speaks of the CM5 it means the pilot bench that runs today, and that the target platform of HYDRA-UMC, an NVIDIA Jetson Orin NX 16 GB, is a design that has not been built or tested.
 - Added the manual workflow dist-build.yml that builds the installable package (package.json, LICENSE and the compiled dist/) as hydra-umc-studio-kit-<version>.tgz twice, compares the bytes, and uploads it with SHA256SUMS, a... (and 1 more changes)
 
