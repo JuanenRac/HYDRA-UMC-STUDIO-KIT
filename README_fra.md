@@ -20,7 +20,7 @@ GPL-3.0-or-later - see LICENSE
   <img src="https://img.shields.io/badge/Feature-No%20Runtime%20Dependencies-blueviolet.svg" alt="Feature">
   <img src="https://img.shields.io/badge/Tests-87%20passing-2ea44f.svg" alt="Tests">
   <img src="https://img.shields.io/badge/Version-0.0.4-0f6cbd.svg" alt="Version">
-  <img src="https://img.shields.io/badge/Maturity-scaffolding-FFB020.svg" alt="Maturity">
+  <img src="https://img.shields.io/badge/Maturity-functional-0F6CBD.svg" alt="Maturity">
 </p>
 
 ---
@@ -38,7 +38,7 @@ GPL-3.0-or-later - see LICENSE
 | | |
 |---|---|
 | Version | `0.0.4` |
-| Maturité | Ébauche |
+| Maturité | Fonctionnel |
 | Tests | 87 (`npm test`) |
 | Technologie | TypeScript / Vitest |
 | Cible | Un navigateur web sur le PC de l'utilisateur |
@@ -54,14 +54,14 @@ Chaque ligne est une partie de ce dépôt et le feu dit où elle en est aujourd'
 
 | Domaine | État | Ce que cela veut dire ici |
 |---|---|---|
-| Logiciel | 🟠 | Seulement la structure et les premières pièces ; l'essentiel du travail reste à faire |
-| Tests | 🟡 | 87 tests automatiques, exécutés à chaque modification |
-| Matériel réel | 🟡 | Sans objet : rien ici ne s'exécute sur du matériel |
+| Logiciel | 🟡 | Fonctionne pour son usage principal ; la vérification d'honnêteté ci-dessus liste ce qui manque encore |
+| Tests | 🟢 | 87 tests automatiques, exécutés à chaque modification |
+| Matériel réel | 🟢 | Sans objet : rien ici ne s'exécute sur du matériel |
 | Interface et protocoles | 🟡 | Les routes ou les messages proposés sont documentés et testés avec un client ; tous les clients ne les ont pas encore utilisés |
 | Intégration | 🟠 | Il fonctionne seul ; son lien avec le reste de l'écosystème n'a pas encore été exercé |
 | Sécurité | 🟡 | Le contrôle d'accès, les limites d'entrée ou les signatures sont implémentés et testés sur un ordinateur ; personne hors du projet ne les a relus |
 | Langues et accessibilité | 🟡 | L'interface et son aide sont en huit langues ; l'usage au clavier et avec un lecteur d'écran n'a pas été testé |
-| Documentation | 🟡 | README en huit langues, vérifié par rapport au manifeste à chaque modification |
+| Documentation | 🟢 | README en huit langues, vérifié par rapport au manifeste à chaque modification |
 
 ## 🎯 Présentation
 

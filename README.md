@@ -20,7 +20,7 @@ GPL-3.0-or-later - see LICENSE
   <img src="https://img.shields.io/badge/Feature-No%20Runtime%20Dependencies-blueviolet.svg" alt="Feature">
   <img src="https://img.shields.io/badge/Tests-87%20passing-2ea44f.svg" alt="Tests">
   <img src="https://img.shields.io/badge/Version-0.0.4-0f6cbd.svg" alt="Version">
-  <img src="https://img.shields.io/badge/Maturity-scaffolding-FFB020.svg" alt="Maturity">
+  <img src="https://img.shields.io/badge/Maturity-functional-0F6CBD.svg" alt="Maturity">
 </p>
 
 ---
@@ -38,7 +38,7 @@ GPL-3.0-or-later - see LICENSE
 | | |
 |---|---|
 | Version | `0.0.4` |
-| Maturity | Scaffolding |
+| Maturity | Functional |
 | Tests | 87 (`npm test`) |
 | Stack | TypeScript / Vitest |
 | Target | A web browser on the user's PC |
@@ -54,14 +54,14 @@ Each line is one part of this repository and the light says how far it is today.
 
 | Area | State | What it means here |
 |---|---|---|
-| Software | 🟠 | Structure and first pieces only; most of the work is still to do |
-| Tests | 🟡 | 87 automated tests, run on every change |
-| Real hardware | 🟡 | Not applicable: nothing here runs on hardware |
+| Software | 🟡 | Works for its main purpose; the honesty check above lists what is still missing |
+| Tests | 🟢 | 87 automated tests, run on every change |
+| Real hardware | 🟢 | Not applicable: nothing here runs on hardware |
 | Interface and protocols | 🟡 | The routes or messages it offers are documented and tested with a client; not every client has used them yet |
 | Integration | 🟠 | It works on its own; its link with the rest of the ecosystem has not been exercised yet |
 | Security | 🟡 | Access control, input limits or signatures are implemented and tested on a computer; nobody outside the project has reviewed them |
 | Languages and accessibility | 🟡 | The interface and its help are in eight languages; keyboard and screen-reader use has not been tested |
-| Documentation | 🟡 | README in eight languages, checked against the manifest on every change |
+| Documentation | 🟢 | README in eight languages, checked against the manifest on every change |
 
 ## 🎯 Overview
 
