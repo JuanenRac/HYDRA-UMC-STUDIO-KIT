@@ -20,7 +20,7 @@ GPL-3.0-or-later - see LICENSE
   <img src="https://img.shields.io/badge/Feature-No%20Runtime%20Dependencies-blueviolet.svg" alt="Feature">
   <img src="https://img.shields.io/badge/Tests-87%20passing-2ea44f.svg" alt="Tests">
   <img src="https://img.shields.io/badge/Version-0.0.4-0f6cbd.svg" alt="Version">
-  <img src="https://img.shields.io/badge/Maturity-scaffolding-FFB020.svg" alt="Maturity">
+  <img src="https://img.shields.io/badge/Maturity-functional-0F6CBD.svg" alt="Maturity">
 </p>
 
 ---
@@ -38,7 +38,7 @@ GPL-3.0-or-later - see LICENSE
 | | |
 |---|---|
 | 版本 | `0.0.4` |
-| 成熟度 | 雏形 |
+| 成熟度 | 可用 |
 | 测试 | 87 (`npm test`) |
 | 技术栈 | TypeScript / Vitest |
 | 目标 | 使用者电脑上的网页浏览器 |
@@ -54,14 +54,14 @@ GPL-3.0-or-later - see LICENSE
 
 | 领域 | 状态 | 在这里的含义 |
 |---|---|---|
-| 软件 | 🟠 | 目前只有结构和最初的部分，大部分工作尚未完成 |
-| 测试 | 🟡 | 87 项自动测试，每次变更都会运行 |
-| 真实硬件 | 🟡 | 不适用：这里的内容不在硬件上运行 |
+| 软件 | 🟡 | 主要用途可用；上面的诚实性检查列出了仍然缺少的内容 |
+| 测试 | 🟢 | 87 项自动测试，每次变更都会运行 |
+| 真实硬件 | 🟢 | 不适用：这里的内容不在硬件上运行 |
 | 接口与协议 | 🟡 | 提供的路由或消息已有文档，并用客户端测试过；尚未被所有客户端使用 |
 | 集成 | 🟠 | 它可以独立工作；与生态系统其余部分的连接尚未验证 |
 | 安全性 | 🟡 | 访问控制、输入限制或签名已实现并在计算机上测试；项目之外无人审查过 |
 | 语言与无障碍 | 🟡 | 界面及其帮助有八种语言；键盘和屏幕阅读器的使用尚未测试 |
-| 文档 | 🟡 | 八种语言的 README，每次变更都会与清单核对 |
+| 文档 | 🟢 | 八种语言的 README，每次变更都会与清单核对 |
 
 ## 🎯 概述
 

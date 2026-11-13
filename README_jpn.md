@@ -20,7 +20,7 @@ GPL-3.0-or-later - see LICENSE
   <img src="https://img.shields.io/badge/Feature-No%20Runtime%20Dependencies-blueviolet.svg" alt="Feature">
   <img src="https://img.shields.io/badge/Tests-87%20passing-2ea44f.svg" alt="Tests">
   <img src="https://img.shields.io/badge/Version-0.0.4-0f6cbd.svg" alt="Version">
-  <img src="https://img.shields.io/badge/Maturity-scaffolding-FFB020.svg" alt="Maturity">
+  <img src="https://img.shields.io/badge/Maturity-functional-0F6CBD.svg" alt="Maturity">
 </p>
 
 ---
@@ -38,7 +38,7 @@ GPL-3.0-or-later - see LICENSE
 | | |
 |---|---|
 | バージョン | `0.0.4` |
-| 成熟度 | 足場段階 |
+| 成熟度 | 機能する |
 | テスト | 87 (`npm test`) |
 | 技術 | TypeScript / Vitest |
 | 対象 | 利用者の PC 上の Web ブラウザー |
@@ -54,14 +54,14 @@ GPL-3.0-or-later - see LICENSE
 
 | 領域 | 状態 | ここでの意味 |
 |---|---|---|
-| ソフトウェア | 🟠 | 構造と最初の部品のみで、作業の大部分はこれからです |
-| テスト | 🟡 | 自動テスト 87 件。変更のたびに実行されます |
-| 実機 | 🟡 | 対象外：ここにあるものはハードウェア上では動きません |
+| ソフトウェア | 🟡 | 主な目的では動作します。足りない点は上の正直さの確認に書かれています |
+| テスト | 🟢 | 自動テスト 87 件。変更のたびに実行されます |
+| 実機 | 🟢 | 対象外：ここにあるものはハードウェア上では動きません |
 | インターフェースとプロトコル | 🟡 | 提供するルートやメッセージは文書化され、クライアントで試験済みです。すべてのクライアントがまだ使ったわけではありません |
 | 連携 | 🟠 | 単独では動作しますが、エコシステムの他の部分との連携はまだ試していません |
 | セキュリティ | 🟡 | アクセス制御、入力の制限、署名のいずれかは実装されコンピューター上で試験済みですが、プロジェクト外の誰もレビューしていません |
 | 言語とアクセシビリティ | 🟡 | インターフェースとヘルプは 8 言語ですが、キーボード操作とスクリーンリーダーでの利用は試していません |
-| ドキュメント | 🟡 | 8 言語の README。変更のたびにマニフェストと照合されます |
+| ドキュメント | 🟢 | 8 言語の README。変更のたびにマニフェストと照合されます |
 
 ## 🎯 概要
 
