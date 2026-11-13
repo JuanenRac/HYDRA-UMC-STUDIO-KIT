@@ -1,0 +1,60 @@
+# =============================================================================
+# HYDRA-UMC-STUDIO-KIT - Simulation bench and coverage floor
+# Copyright (C) 2026 JuanenRac (Electro Hobby 3D) <electrohobby3d@gmail.com>
+# GPL-3.0-or-later - see LICENSE
+#
+# Runs the real client, session and connection history against a simulated HYDRA-UMC server (sign-in, expiry of the token, bursts of 503, a rate
+# limit, a cut answer, a server that never answers, a connection that drops) and measures the coverage of the kit with a floor that must not go down.
+# It runs on every push and pull request and by hand.
+# =============================================================================
+name: Simulation bench
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  simulation:
+    name: Kit against a simulated server
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: "22"
+          cache: npm
+      - name: Install the dependencies
+        run: npm ci --ignore-scripts
+      - name: Run the simulated server scenarios
+        run: npx vitest run tests/simulated-server.test.ts
+
+  coverage:
+    name: Coverage floor of the kit
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: "22"
+          cache: npm
+      - name: Install the dependencies
+        run: npm ci --ignore-scripts
+      - name: Measure the coverage with the same version of the coverage provider as the test runner
+        run: |
+          version=$(node -e "console.log(JSON.parse(require('fs').readFileSync('node_modules/vitest/package.json','utf8')).version)")
+          npm install --no-save --ignore-scripts "@vitest/coverage-v8@${version}"
+          npx vitest run --coverage --coverage.provider=v8 --coverage.include='src/**' --coverage.reporter=text
