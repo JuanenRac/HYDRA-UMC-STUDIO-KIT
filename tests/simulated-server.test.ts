@@ -380,3 +380,96 @@ describe('a seeded storm of faults', () => {
     expect(good).toBeGreaterThan(20);
   });
 });
+
+describe('a sign-in that meets an outage, a restart and parallel calls', () => {
+  /** A client of the same rig with its own policy for the refresh, so each scenario says what the application does. */
+  function clientWith(r: Rig, onUnauthorized: () => Promise<boolean>): HttpClient {
+    return createHttpClient({ fetch: r.server.fetch, getToken: () => r.session.readToken(), retries: 2, timeoutMs: 0, sleep: async () => {}, onUnauthorized });
+  }
+
+  async function refreshWith(r: Rig, keepOnOutage: boolean): Promise<boolean> {
+    const plain = createHttpClient({ fetch: r.server.fetch, retries: 0, timeoutMs: 50 });
+    const result = await plain.attempt<{ token: string; refreshToken: string }>('/api/refresh', { method: 'POST', json: { refreshToken: r.session.readRefreshToken() } });
+    if (!result.ok) {
+      if (!keepOnOutage || !result.error.temporary) r.session.clear();
+      return false;
+    }
+    r.session.replaceToken(result.value.token, result.value.refreshToken);
+    return true;
+  }
+
+  it('refreshes once for ten parallel calls when the application shares the refresh that is under way', async () => {
+    const r = rig();
+    r.server.routes.set('/api/state', () => Response.json({ state: 'READY' }));
+    await signIn(r);
+    let inFlight: Promise<boolean> | null = null;
+    const shared = (): Promise<boolean> => {
+      if (inFlight === null) inFlight = refreshWith(r, true).finally(() => { inFlight = null; });
+      return inFlight;
+    };
+    const http = clientWith(r, shared);
+    r.server.expire(r.session.readToken() as string);
+    const results = await Promise.all(Array.from({ length: 10 }, () => http.attempt('/api/state')));
+    expect(results.every((result) => result.ok)).toBe(true);
+    expect(r.server.requests.filter((q) => q.path === '/api/refresh').length).toBeLessThanOrEqual(2);
+    expect(r.session.signedIn.get()).toBe(true);
+  });
+
+  it('keeps the sign-in when the server is off during the refresh, and refreshes on the next call', async () => {
+    const r = rig();
+    r.server.routes.set('/api/state', () => Response.json({ state: 'READY' }));
+    await signIn(r);
+    let outage = true;
+    const http = clientWith(r, async () => {
+      if (outage) {
+        r.server.fault = 'drop';
+        r.server.faultsLeft = 1;
+      }
+      return refreshWith(r, true);
+    });
+    r.server.expire(r.session.readToken() as string);
+    const first = await http.attempt('/api/state');
+    expect(first.ok).toBe(false);
+    expect(r.session.signedIn.get()).toBe(true);
+    outage = false;
+    r.server.fault = 'none';
+    r.server.faultsLeft = 0;
+    expect((await http.attempt('/api/state')).ok).toBe(true);
+    expect(r.session.signedIn.get()).toBe(true);
+  });
+
+  it('gives up on an outage longer than the retries without touching the sign-in, and works when the server is back', async () => {
+    const r = rig();
+    r.server.routes.set('/api/state', () => Response.json({ state: 'READY' }));
+    await signIn(r);
+    const token = r.session.readToken();
+    const http = clientWith(r, () => refreshWith(r, true));
+    r.server.fault = 'drop';
+    r.server.faultsLeft = 10;
+    const down = await http.attempt('/api/state');
+    expect(down.ok).toBe(false);
+    if (!down.ok) {
+      expect(down.error.kind).toBe('network');
+      expect(down.error.attempts).toBe(3);
+      expect(down.error.temporary).toBe(true);
+    }
+    expect(r.session.readToken()).toBe(token);
+    r.server.faultsLeft = 0;
+    expect((await http.attempt('/api/state')).ok).toBe(true);
+  });
+
+  it('is signed out by a restart of the server that forgets every token, and signs in again', async () => {
+    const r = rig();
+    r.server.routes.set('/api/state', () => Response.json({ state: 'READY' }));
+    await signIn(r);
+    const http = clientWith(r, () => refreshWith(r, true));
+    r.server.validTokens.clear();
+    r.server.validRefresh.clear();
+    const result = await http.attempt('/api/state');
+    expect(result.ok).toBe(false);
+    if (!result.ok) expect(result.error.status).toBe(401);
+    expect(r.session.signedIn.get()).toBe(false);
+    await signIn(r);
+    expect((await http.attempt('/api/state')).ok).toBe(true);
+  });
+});
