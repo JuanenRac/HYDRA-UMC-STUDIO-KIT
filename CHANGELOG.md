@@ -4,6 +4,7 @@ All notable changes to this project are documented here.
 
 ## [Unreleased]
 
+- **The SDK pin and the shared tools are up to date:** the SDK dependency names the newest release tag, and the shared tools are the canonical copies again.
 - **More tests of the kit and a simulation bench with a coverage report:** `tests/messages.test.ts` checks the eight languages of the catalog (a text for every key, the same placeholders in every language, European Portuguese, language picking and filling), `tests/storage.test.ts` the storage helpers (a storage that refuses, JSON that cannot be written, a seeded round trip, the browser storage that is missing or throws) and the observable store (no notification for the same value, listeners that stop or start during a change), and `tests/simulated-server.test.ts` runs the real client, session and connection history against a simulated HYDRA-UMC server: sign-in, a token that expires and is refreshed once, bursts of 503, a rate limit, a cut answer, a server that never answers, a dropped connection, a cancelled call and a seeded storm of faults. The new workflow "Simulation bench" runs the scenarios and prints the coverage of the kit.
 
 ## [0.0.4] - **README: the platform statement:** a note says that where the README speaks of the CM5 it means the pilot bench that runs today, and that the target platform of HYDRA-UMC, an NVIDIA Jetson Orin NX 16 GB, is a design that has not been built or tested.
