@@ -92,6 +92,16 @@ export function createSession(options: SessionOptions = {}): Session {
   const refreshTokenKey = options.refreshTokenKey ?? DEFAULT_REFRESH_TOKEN_KEY;
   const stores: SessionStores = options.stores ?? { local: browserStorage('localStorage'), session: browserStorage('sessionStorage') };
 
+  // Set while the token of this tab came from a launch address: that view must never renew itself with the refresh token of an earlier login.
+  const launchMarkerKey = `${tokenKey}.launch`;
+  const markLaunch = (): void => {
+    safeSet(stores.session, launchMarkerKey, '1');
+    safeRemove(stores.session, refreshTokenKey);
+  };
+  const readRefreshToken = (): string | null => (safeGet(stores.session, launchMarkerKey) !== null
+    ? safeGet(stores.session, refreshTokenKey)
+    : safeGet(stores.session, refreshTokenKey) ?? safeGet(stores.local, refreshTokenKey));
+
   const readToken = (): string | null => safeGet(stores.session, tokenKey) ?? safeGet(stores.local, tokenKey);
   const signedIn = createStore<boolean>(readToken() !== null);
   const refreshState = (): void => signedIn.set(readToken() !== null);
@@ -100,15 +110,17 @@ export function createSession(options: SessionOptions = {}): Session {
     tokenKey,
     refreshTokenKey,
     readToken,
-    readRefreshToken: () => safeGet(stores.session, refreshTokenKey) ?? safeGet(stores.local, refreshTokenKey),
+    readRefreshToken,
     signedIn: { get: signedIn.get, subscribe: signedIn.subscribe },
     saveLaunchToken(token) {
       safeSet(stores.session, tokenKey, token);
+      markLaunch();
       refreshState();
     },
     saveLoginTokens(token, refreshToken, persist = false) {
       const keep = persist ? stores.local : stores.session;
       const drop = persist ? stores.session : stores.local;
+      safeRemove(stores.session, launchMarkerKey);
       // A new login replaces whatever a launch address or an earlier login left in the other storage.
       safeRemove(drop, tokenKey);
       safeSet(keep, tokenKey, token);
@@ -125,6 +137,7 @@ export function createSession(options: SessionOptions = {}): Session {
       refreshState();
     },
     clear() {
+      safeRemove(stores.session, launchMarkerKey);
       for (const store of [stores.session, stores.local]) {
         safeRemove(store, tokenKey);
         safeRemove(store, refreshTokenKey);
@@ -139,6 +152,7 @@ export function createSession(options: SessionOptions = {}): Session {
       const found = extractLaunchToken(href, launchOptions);
       if (!found) return null;
       safeSet(stores.session, tokenKey, found.token);
+      markLaunch();
       refreshState();
       return found.cleanedUrl;
     },
