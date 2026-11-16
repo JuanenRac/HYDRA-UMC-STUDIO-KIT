@@ -71,6 +71,21 @@ describe('createSession', () => {
     expect(local.getItem('hydra_token')).toBeNull();
   });
 
+  it('a launch token never renews itself with the refresh token of an earlier login', () => {
+    const { auth, local, session } = setup();
+    auth.saveLoginTokens('saved', 'saved-refresh', true);
+    auth.saveLaunchToken('launch');
+    expect(auth.readRefreshToken()).toBeNull();
+    expect(local.getItem('hydra_refresh_token')).toBe('saved-refresh');
+    auth.adoptLaunchToken('https://h/p#token=other');
+    expect(auth.readRefreshToken()).toBeNull();
+    auth.replaceToken('fresh', 'issued-for-this-view');
+    expect(auth.readRefreshToken()).toBe('issued-for-this-view');
+    expect(session.getItem('hydra_token')).toBe('fresh');
+    auth.saveLoginTokens('typed', 'typed-refresh', true);
+    expect(auth.readRefreshToken()).toBe('typed-refresh');
+  });
+
   it('replaces the token in the local storage when that is where the login is', () => {
     const { auth, local } = setup();
     auth.saveLoginTokens('a', 'b', true);
