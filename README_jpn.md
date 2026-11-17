@@ -18,14 +18,14 @@ GPL-3.0-or-later - see LICENSE
   <img src="https://img.shields.io/badge/License-GPL%203.0--or--later-blue.svg" alt="GPL 3.0 or later">
   <img src="https://img.shields.io/badge/Stack-TypeScript-3178C6.svg" alt="Stack">
   <img src="https://img.shields.io/badge/Feature-No%20Runtime%20Dependencies-blueviolet.svg" alt="Feature">
-  <img src="https://img.shields.io/badge/Tests-150%20passing-2ea44f.svg" alt="Tests">
+  <img src="https://img.shields.io/badge/Tests-151%20passing-2ea44f.svg" alt="Tests">
   <img src="https://img.shields.io/badge/Version-0.0.4-0f6cbd.svg" alt="Version">
   <img src="https://img.shields.io/badge/Maturity-functional-0F6CBD.svg" alt="Maturity">
 </p>
 
 ---
 
-**正直さの確認 - 現時点で実際に動くもの：** セッション、HTTP クライアント、アドレスの解決、接続履歴のパーサー、ローカル設定、最近の選択のリスト、ツアー、文言は実際に動作し、テスト済みです（150 件が成功）。ただしテストはすべて `fetch` とストレージの代役を相手にしたもので、実際のブラウザー内や実際の HYDRA-UMC-SERVER に対して動かしたことはまだありません。HYDRA-UMC-STUDIO はまだこのキットを使っていないため、現時点でこれを使っているクライアントの画面はありません。ガイドツアーは新しいコードで、置き換える既存のツアーを持つクライアントはありません。これまでに提供した内容は `CHANGELOG.md` を参照してください。
+**正直さの確認 - 現時点で実際に動くもの：** セッション、HTTP クライアント、アドレスの解決、接続履歴のパーサー、ローカル設定、最近の選択のリスト、ツアー、文言は実際に動作し、テスト済みです（151 件が成功）。ただしテストはすべて `fetch` とストレージの代役を相手にしたもので、実際のブラウザー内や実際の HYDRA-UMC-SERVER に対して動かしたことはまだありません。HYDRA-UMC-STUDIO はまだこのキットを使っていないため、現時点でこれを使っているクライアントの画面はありません。ガイドツアーは新しいコードで、置き換える既存のツアーを持つクライアントはありません。これまでに提供した内容は `CHANGELOG.md` を参照してください。
 
 ---
 
@@ -39,7 +39,7 @@ GPL-3.0-or-later - see LICENSE
 |---|---|
 | バージョン | `0.0.4` |
 | 成熟度 | 機能する |
-| テスト | 150 (`npm test`) |
+| テスト | 151 (`npm test`) |
 | 技術 | TypeScript / Vitest |
 | 対象 | 利用者の PC 上の Web ブラウザー |
 | 実機での確認 | 対象外：ここにあるものはハードウェア上では動きません |
@@ -55,7 +55,7 @@ GPL-3.0-or-later - see LICENSE
 | 領域 | 状態 | ここでの意味 |
 |---|---|---|
 | ソフトウェア | 🟡 | 主な目的では動作します。足りない点はこの README の正直さの確認に書かれています |
-| テスト | 🟡 | 自動テスト 150 件を記録済み。正確な件数、または変更のたびに実行するワークフローはまだ確認されていません |
+| テスト | 🟡 | 自動テスト 151 件を記録済み。正確な件数、または変更のたびに実行するワークフローはまだ確認されていません |
 | 実機 | ⚪ | 対象外：ここにあるものはハードウェア上では動きません |
 | インターフェースとプロトコル | 🟡 | 提供するルートやメッセージは文書化され、クライアントで試験済みです。すべてのクライアントがまだ使ったわけではありません |
 | 連携 | 🟠 | 単独では動作しますが、エコシステムの他の部分との連携はまだ試していません |
@@ -114,7 +114,7 @@ Web クライアントから `import { createSession, createHttpClient } from 'h
 
 ## 🧪 テスト
 
-`npm test` で自動テスト 150 件を実行します。 `fetch` とストレージの代役を使うため、ブラウザーもネットワークも不要です。
+`npm test` で自動テスト 151 件を実行します。 `fetch` とストレージの代役を使うため、ブラウザーもネットワークも不要です。
 
 CI は `HYDRA_UMC_CI=1 python tools/ci_validate.py` を実行し、マニフェスト、文書、8 つの README、図を検査します。
 
