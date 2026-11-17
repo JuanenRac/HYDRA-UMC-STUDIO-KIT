@@ -18,14 +18,14 @@ GPL-3.0-or-later - see LICENSE
   <img src="https://img.shields.io/badge/License-GPL%203.0--or--later-blue.svg" alt="GPL 3.0 or later">
   <img src="https://img.shields.io/badge/Stack-TypeScript-3178C6.svg" alt="Stack">
   <img src="https://img.shields.io/badge/Feature-No%20Runtime%20Dependencies-blueviolet.svg" alt="Feature">
-  <img src="https://img.shields.io/badge/Tests-150%20passing-2ea44f.svg" alt="Tests">
+  <img src="https://img.shields.io/badge/Tests-151%20passing-2ea44f.svg" alt="Tests">
   <img src="https://img.shields.io/badge/Version-0.0.4-0f6cbd.svg" alt="Version">
   <img src="https://img.shields.io/badge/Maturity-functional-0F6CBD.svg" alt="Maturity">
 </p>
 
 ---
 
-**Ehrlichkeitsprüfung - was heute wirklich läuft:** Sitzung, HTTP-Client, Adressauflösung, Parser des Verbindungsverlaufs, lokale Einstellungen, die Liste der letzten Auswahl, die Rundgänge und die Texte sind echt und getestet (150 Tests bestehen), immer gegen Attrappen von `fetch` und vom Speicher: Noch nichts ist in einem echten Browser oder gegen einen echten HYDRA-UMC-SERVER gelaufen. HYDRA-UMC-STUDIO nutzt das Kit noch nicht, daher verwendet es heute keine Ansicht irgendeines Clients. Die geführten Rundgänge sind neuer Code: Kein Client hat einen Rundgang, der zu ersetzen wäre. Was bisher ausgeliefert wurde, steht in `CHANGELOG.md`.
+**Ehrlichkeitsprüfung - was heute wirklich läuft:** Sitzung, HTTP-Client, Adressauflösung, Parser des Verbindungsverlaufs, lokale Einstellungen, die Liste der letzten Auswahl, die Rundgänge und die Texte sind echt und getestet (151 Tests bestehen), immer gegen Attrappen von `fetch` und vom Speicher: Noch nichts ist in einem echten Browser oder gegen einen echten HYDRA-UMC-SERVER gelaufen. HYDRA-UMC-STUDIO nutzt das Kit noch nicht, daher verwendet es heute keine Ansicht irgendeines Clients. Die geführten Rundgänge sind neuer Code: Kein Client hat einen Rundgang, der zu ersetzen wäre. Was bisher ausgeliefert wurde, steht in `CHANGELOG.md`.
 
 ---
 
@@ -39,7 +39,7 @@ GPL-3.0-or-later - see LICENSE
 |---|---|
 | Version | `0.0.4` |
 | Reifegrad | Funktionsfähig |
-| Tests | 150 (`npm test`) |
+| Tests | 151 (`npm test`) |
 | Technik | TypeScript / Vitest |
 | Ziel | Ein Webbrowser auf dem PC des Benutzers |
 | Auf echter Hardware | Nicht zutreffend: nichts hiervon läuft auf Hardware |
@@ -55,7 +55,7 @@ Jede Zeile ist ein Teil dieses Repositorys, und die Ampel sagt, wie weit er heut
 | Bereich | Stand | Was das hier bedeutet |
 |---|---|---|
 | Software | 🟡 | Funktioniert für seinen Hauptzweck; die Ehrlichkeitsprüfung in diesem README nennt, was noch fehlt |
-| Tests | 🟡 | 150 automatische Tests vermerkt; die genaue Anzahl oder ein Workflow, der sie bei jeder Änderung ausführt, ist noch nicht bestätigt |
+| Tests | 🟡 | 151 automatische Tests vermerkt; die genaue Anzahl oder ein Workflow, der sie bei jeder Änderung ausführt, ist noch nicht bestätigt |
 | Echte Hardware | ⚪ | Nicht zutreffend: nichts hiervon läuft auf Hardware |
 | Schnittstelle und Protokolle | 🟡 | Die angebotenen Routen oder Nachrichten sind dokumentiert und mit einem Client getestet; noch nicht jeder Client hat sie benutzt |
 | Integration | 🟠 | Es funktioniert für sich allein; die Verbindung zum Rest des Ökosystems wurde noch nicht erprobt |
@@ -114,7 +114,7 @@ Verwende es in einem Webclient mit `import { createSession, createHttpClient } f
 
 ## 🧪 Tests
 
-150 automatische Tests laufen mit `npm test`. Sie nutzen Attrappen für `fetch` und den Speicher und brauchen weder Browser noch Netz.
+151 automatische Tests laufen mit `npm test`. Sie nutzen Attrappen für `fetch` und den Speicher und brauchen weder Browser noch Netz.
 
 Die CI führt `HYDRA_UMC_CI=1 python tools/ci_validate.py` aus; das prüft das Manifest, die Dokumente, die acht READMEs und die Bilder.
 
