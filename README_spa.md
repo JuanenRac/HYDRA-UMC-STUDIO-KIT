@@ -55,7 +55,7 @@ Cada línea es una parte de este repositorio y la luz dice hasta dónde llega ho
 | Área | Estado | Qué significa aquí |
 |---|---|---|
 | Software | 🟡 | Funciona para su propósito principal; la comprobación de honestidad de este README lista lo que aún falta |
-| Pruebas | 🟢 | 150 pruebas automáticas, ejecutadas en cada cambio |
+| Pruebas | 🟡 | 150 pruebas automáticas registradas; aún no se ha confirmado el número exacto ni un flujo de trabajo que las ejecute en cada cambio |
 | Hardware real | ⚪ | No aplica: nada de esto se ejecuta en hardware |
 | Interfaz y protocolos | 🟡 | Las rutas o los mensajes que ofrece están documentados y probados con un cliente; aún no los han usado todos los clientes |
 | Integración | 🟠 | Funciona por sí solo; su enlace con el resto del ecosistema aún no se ha ejercitado |
