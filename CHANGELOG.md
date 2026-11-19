@@ -4,6 +4,7 @@ All notable changes to this project are documented here.
 
 ## [Unreleased]
 
+- **TypeScript 7 builds the kit:** the compiler dependency moves to the 7.0 series and the build, type check and tests run on it.
 - **A launch token no longer falls back to the refresh token of an earlier login:** a view started from an address that carries a token keeps its own session; its refresh token is only one issued for that view, so a saved administrator login can not take over the tab when the launch token expires. Typing a login or signing out ends the launch state.
 - **The manual production-files build no longer refuses a four-component version:** `package.json` and `package-lock.json` must equal the first three components of the manifest version (npm has no fourth component) and agree with each other, and the archive keeps the name of the manifest version. The rule lives in `tools/extra_checks.py` (`dist-version`), the workflow runs it, and the validator tries it on made-up folders (three components equal, four components with a three-component `package.json`, and a different `package.json` or lock failing).
 
