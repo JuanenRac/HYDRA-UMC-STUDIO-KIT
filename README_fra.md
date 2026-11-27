@@ -18,14 +18,14 @@ GPL-3.0-or-later - see LICENSE
   <img src="https://img.shields.io/badge/License-GPL%203.0--or--later-blue.svg" alt="GPL 3.0 or later">
   <img src="https://img.shields.io/badge/Stack-TypeScript-3178C6.svg" alt="Stack">
   <img src="https://img.shields.io/badge/Feature-No%20Runtime%20Dependencies-blueviolet.svg" alt="Feature">
-  <img src="https://img.shields.io/badge/Tests-151%20passing-2ea44f.svg" alt="Tests">
+  <img src="https://img.shields.io/badge/Tests-153%20passing-2ea44f.svg" alt="Tests">
   <img src="https://img.shields.io/badge/Version-0.0.5-0f6cbd.svg" alt="Version">
   <img src="https://img.shields.io/badge/Maturity-functional-0F6CBD.svg" alt="Maturity">
 </p>
 
 ---
 
-**Vérification d'honnêteté - ce qui tourne réellement aujourd'hui :** la session, le client HTTP, la résolution de l'adresse, les lecteurs de l'historique des connexions, les préférences locales, la liste récente, les visites et les textes sont réels et testés (151 tests réussis), toujours contre des simulations de `fetch` et du stockage : rien n'a encore tourné dans un vrai navigateur ni contre un vrai HYDRA-UMC-SERVER. HYDRA-UMC-STUDIO ne consomme pas encore le kit, donc aucun écran d'aucun client ne l'utilise aujourd'hui. Les visites guidées sont du code nouveau : aucun client n'a de visite à remplacer. Voir `CHANGELOG.md` pour ce qui a été livré exactement jusqu'ici.
+**Vérification d'honnêteté - ce qui tourne réellement aujourd'hui :** la session, le client HTTP, la résolution de l'adresse, les lecteurs de l'historique des connexions, les préférences locales, la liste récente, les visites et les textes sont réels et testés (153 tests réussis), toujours contre des simulations de `fetch` et du stockage : rien n'a encore tourné dans un vrai navigateur ni contre un vrai HYDRA-UMC-SERVER. HYDRA-UMC-STUDIO ne consomme pas encore le kit, donc aucun écran d'aucun client ne l'utilise aujourd'hui. Les visites guidées sont du code nouveau : aucun client n'a de visite à remplacer. Voir `CHANGELOG.md` pour ce qui a été livré exactement jusqu'ici.
 
 ---
 
@@ -39,7 +39,7 @@ GPL-3.0-or-later - see LICENSE
 |---|---|
 | Version | `0.0.5` |
 | Maturité | Fonctionnel |
-| Tests | 151 (`npm test`) |
+| Tests | 153 (`npm test`) |
 | Technologie | TypeScript / Vitest |
 | Cible | Un navigateur web sur le PC de l'utilisateur |
 | Sur matériel réel | Sans objet : rien ici ne s'exécute sur du matériel |
@@ -55,7 +55,7 @@ Chaque ligne est une partie de ce dépôt et le feu dit où elle en est aujourd'
 | Domaine | État | Ce que cela veut dire ici |
 |---|---|---|
 | Logiciel | 🟡 | Fonctionne pour son usage principal ; la vérification d'honnêteté de ce README liste ce qui manque encore |
-| Tests | 🟢 | 151 tests automatiques, exécutés à chaque modification |
+| Tests | 🟢 | 153 tests automatiques, exécutés à chaque modification |
 | Matériel réel | ⚪ | Sans objet : rien ici ne s'exécute sur du matériel |
 | Interface et protocoles | 🟡 | Les routes ou les messages proposés sont documentés et testés avec un client ; tous les clients ne les ont pas encore utilisés |
 | Intégration | 🟠 | Il fonctionne seul ; son lien avec le reste de l'écosystème n'a pas encore été exercé |
@@ -114,7 +114,7 @@ Utilisez-le depuis un client web avec `import { createSession, createHttpClient 
 
 ## 🧪 Tests
 
-151 tests automatiques s'exécutent avec `npm test`. Ils utilisent des simulations de `fetch` et du stockage et n'ont besoin ni de navigateur ni de réseau.
+153 tests automatiques s'exécutent avec `npm test`. Ils utilisent des simulations de `fetch` et du stockage et n'ont besoin ni de navigateur ni de réseau.
 
 La CI exécute `HYDRA_UMC_CI=1 python tools/ci_validate.py`, qui vérifie le manifeste, les documents, les huit README et les images.
 
