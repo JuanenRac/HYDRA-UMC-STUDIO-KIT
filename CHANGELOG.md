@@ -4,6 +4,8 @@ All notable changes to this project are documented here.
 
 ## [Unreleased]
 
+- **A sign-out can revoke every refresh token:** `Session.allRefreshTokens()` lists the refresh token of each storage once, so the client can revoke them all before `clear()` removes them. A view started from a launch address does not list the saved login of the browser.
+
 ## [0.0.5]
 
 - **A launch token no longer falls back to the refresh token of an earlier login:** a view started from an address that carries a token keeps its own session; its refresh token is only one issued for that view, so a saved administrator login can not take over the tab when the launch token expires. Typing a login or signing out ends the launch state.
