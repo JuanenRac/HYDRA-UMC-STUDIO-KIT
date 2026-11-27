@@ -69,6 +69,12 @@ export interface Session {
   /** The access token of this page: the one a launch address brought (session storage) wins over a saved login. */
   readToken(): string | null;
   readRefreshToken(): string | null;
+  /**
+   * Every refresh token this page can see, in both storages, without repeats: what a sign-out has to revoke on the server, since `clear()`
+   * removes both and only one of them is the one `readRefreshToken()` answers. A view started from a launch address does not list the saved
+   * login of the browser: it is not its own to revoke.
+   */
+  allRefreshTokens(): string[];
   /** Observable: true while there is an access token. Changes whenever this object stores or clears a token. */
   readonly signedIn: ReadableStore<boolean>;
   /** A token received in the address: kept for this view only. */
@@ -111,6 +117,11 @@ export function createSession(options: SessionOptions = {}): Session {
     refreshTokenKey,
     readToken,
     readRefreshToken,
+    allRefreshTokens() {
+      const own = safeGet(stores.session, refreshTokenKey);
+      const saved = safeGet(stores.session, launchMarkerKey) === null ? safeGet(stores.local, refreshTokenKey) : null;
+      return [...new Set([own, saved].filter((token): token is string => token !== null && token !== ''))];
+    },
     signedIn: { get: signedIn.get, subscribe: signedIn.subscribe },
     saveLaunchToken(token) {
       safeSet(stores.session, tokenKey, token);

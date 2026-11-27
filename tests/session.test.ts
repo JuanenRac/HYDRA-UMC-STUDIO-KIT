@@ -145,3 +145,23 @@ describe('createSession', () => {
     expect(createSession({ stores: { local: null, session } }).signedIn.get()).toBe(true);
   });
 });
+
+describe('allRefreshTokens', () => {
+  it('lists the token of each storage once, and nothing when there is none', () => {
+    const local = createMemoryStorage({ hydra_refresh_token: 'saved' });
+    const session = createMemoryStorage({ hydra_refresh_token: 'tab' });
+    const auth = createSession({ stores: { local, session } });
+    expect(auth.allRefreshTokens()).toEqual(['tab', 'saved']);
+    local.setItem('hydra_refresh_token', 'tab');
+    expect(auth.allRefreshTokens()).toEqual(['tab']);
+    auth.clear();
+    expect(auth.allRefreshTokens()).toEqual([]);
+  });
+
+  it('leaves the saved login alone in a view started from a launch address', () => {
+    const local = createMemoryStorage({ hydra_refresh_token: 'saved' });
+    const auth = createSession({ stores: { local, session: createMemoryStorage() } });
+    auth.saveLaunchToken('launch.jwt');
+    expect(auth.allRefreshTokens()).toEqual([]);
+  });
+});
