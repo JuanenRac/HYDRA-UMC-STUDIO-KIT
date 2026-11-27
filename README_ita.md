@@ -55,7 +55,7 @@ Ogni riga è una parte di questo repository e il semaforo dice a che punto è og
 | Area | Stato | Cosa significa qui |
 |---|---|---|
 | Software | 🟡 | Funziona per il suo scopo principale; la verifica di onestà di questo README elenca ciò che manca ancora |
-| Test | 🟡 | 151 test automatici registrati; il numero esatto, o un workflow che li esegue a ogni modifica, non è ancora confermato |
+| Test | 🟢 | 151 test automatici, eseguiti a ogni modifica |
 | Hardware reale | ⚪ | Non applicabile: nulla qui gira su hardware |
 | Interfaccia e protocolli | 🟡 | Le rotte o i messaggi offerti sono documentati e provati con un client; non tutti i client li hanno ancora usati |
 | Integrazione | 🟠 | Funziona da solo; il collegamento con il resto dell'ecosistema non è ancora stato provato |
